@@ -70,7 +70,7 @@ description: Complete manifest of 25 iOS skills - status, effort, usage, all met
 
 ---
 
-## Future: Advanced (4 Skills, ~1,600 lines)
+## Phase 4: Advanced (4 Skills, ~1,600 lines)
 
 | # | Skill | Status | Effort | Lines | Trigger | Dependencies |
 |---|---|---|---|---|---|---|
@@ -79,7 +79,7 @@ description: Complete manifest of 25 iOS skills - status, effort, usage, all met
 | 24 | **accessibility-advanced** | 📝 Reference | 2-3h | 400 | A11y polish | Accessibility |
 | 25 | **storekit2-advanced** | 📝 Reference | 2-3h | 420 | Advanced monetization | StoreKit 2 |
 
-**Total Future:** 4 skills, ~1,600 lines, 9-13 hours  
+**Total Phase 4:** 4 skills, ~1,600 lines, 9-13 hours  
 **Target:** 2026+ advanced features  
 **Cost:** 0
 

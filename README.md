@@ -96,6 +96,7 @@ cd swift-ios-skills
 Starting first app?  → Phase 1 skills + integration guide
 Already live?        → Phase 2 skills for optimization
 Growing user base?   → Phase 3 skills for acquisition
+Building 2026 apps?  → Phase 4 skills for advanced features
 ```
 
 ### 3. Copy Patterns to Your Project
@@ -204,7 +205,7 @@ swift-ios-skills/
 │   ├── skill-widgetkit-homescreen.md
 │   └── skill-live-activities.md
 │
-├── future/                           (4 skills)
+├── phase4/                           (4 skills)
 │   ├── skill-on-device-ai.md
 │   ├── skill-app-intents.md
 │   ├── skill-accessibility-advanced.md

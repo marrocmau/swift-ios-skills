@@ -1,9 +1,9 @@
 ---
 name: SKILLS-BATCH-PHASE1234
-description: Batch of 16 skills (Phase 1 remaining, Phase 2, Phase 3, Future) - Comprehensive iOS skill set
+description: Batch of 16 skills (Phase 1 remaining, Phase 2, Phase 3, Phase 4) - Comprehensive iOS skill set
 ---
 
-# iOS Skills Batch: 16 Core Skills (Phase 1-Future)
+# iOS Skills Batch: 16 Core Skills (Phase 1-Phase 4)
 
 This document contains 16 production-ready skills for iOS development with Claude Code.
 
@@ -907,7 +907,7 @@ final class StoreKitManager {
 - **Phase 1:** 9 skills (5 already created + 4 here)
 - **Phase 2:** 6 skills
 - **Phase 3:** 6 skills
-- **Future:** 4 skills
+- **Phase 4:** 4 skills
 - **Total:** 25 skills
 
 This batch covers the complete iOS development workflow from foundation to advanced features, ready for public GitHub repository.

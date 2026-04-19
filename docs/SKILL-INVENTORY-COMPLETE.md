@@ -291,10 +291,10 @@ description: |
 | 19 | swiftui-animations | 3 | ⭐⭐⭐ | 2-3h | ~420 | 🔲 |
 | 20 | widgetkit-homescreen | 3 | ⭐⭐⭐ | 3-4h | ~480 | 🔲 |
 | 21 | live-activities | 3 | ⭐⭐⭐ | 2-3h | ~350 | 🔲 |
-| 22 | on-device-ai | Future | ⭐⭐ | 3-4h | ~400 | 🔲 |
-| 23 | app-intents | Future | ⭐⭐ | 2-3h | ~380 | 🔲 |
-| 24 | accessibility-advanced | Future | ⭐⭐⭐ | 2-3h | ~400 | 🔲 |
-| 25 | storekit2-advanced | Future | ⭐⭐ | 2-3h | ~420 | 🔲 |
+| 22 | on-device-ai | Phase 4 | ⭐⭐ | 3-4h | ~400 | 🔲 |
+| 23 | app-intents | Phase 4 | ⭐⭐ | 2-3h | ~380 | 🔲 |
+| 24 | accessibility-advanced | Phase 4 | ⭐⭐⭐ | 2-3h | ~400 | 🔲 |
+| 25 | storekit2-advanced | Phase 4 | ⭐⭐ | 2-3h | ~420 | 🔲 |
 
 ---
 
@@ -373,7 +373,7 @@ description: |
 10. swiftui-animations (polish, app 2+)
 
 **Not urgent:**
-- Everything else (Phase 3+, Future)
+- Everything else (Phase 3+, Phase 4)
 
 ---
 

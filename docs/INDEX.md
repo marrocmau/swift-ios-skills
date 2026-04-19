@@ -69,7 +69,7 @@
     - Phase 1: swiftui-forms, image-handling
     - Phase 2: sentry, revenuecat, fastlane, metadata, push, analytics (6)
     - Phase 3: aso, reviews, deep-linking, animations, widgets, live-activities (6)
-    - Future: AI, intents, accessibility, storekit2 (4)
+    - Phase 4: AI, intents, accessibility, storekit2 (4)
 
 ### 🛠️ Supporting Documents
 
@@ -138,7 +138,7 @@
 - **Time:** ~15 hours
 - **Result:** App #2 launched, growth metrics
 
-### Future: Advanced (4 skills, ~1,600 lines)
+### Phase 4: Advanced (4 skills, ~1,600 lines)
 - on-device-ai, app-intents, accessibility-advanced, storekit2-advanced
 - **Time:** ~10 hours
 - **Result:** Advanced features (2026+)
@@ -182,8 +182,8 @@
 **Phase 3 (Growth):**
 → [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Phase 3 section)
 
-**Future:**
-→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Future section)
+**Phase 4:**
+→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Phase 4 section)
 
 ---
 
@@ -194,7 +194,7 @@
 - [ ] Create GitHub repo
 - [ ] Copy all 22 files
 - [ ] Add MIT LICENSE file
-- [ ] Create folder structure (phase1/, phase2/, phase3/, future/, templates/)
+- [ ] Create folder structure (phase1/, phase2/, phase3/, phase4/, templates/)
 - [ ] Add GitHub description
 - [ ] Add topics: swift, ios, claude-code, xcode, swiftui
 - [ ] Enable discussions

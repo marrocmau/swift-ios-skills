@@ -48,7 +48,7 @@ This is your **gift back to the developer community** for:
    - Phase 1: swiftui-forms, image-handling
    - Phase 2: sentry, revenuecat, fastlane, metadata, push, analytics
    - Phase 3: aso, reviews, deep-linking, animations, widgets, live-activities
-   - Future: AI, intents, accessibility, storekit2
+   - Phase 4: AI, intents, accessibility, storekit2
 
 ### Integration Guides
 
@@ -137,7 +137,7 @@ Phase 3: Growth (6 skills, ~2,100 lines)
 ├─ widgetkit-homescreen          Widgets
 └─ live-activities               Dynamic Island
 
-Future: Advanced (4 skills, ~1,600 lines)
+Phase 4: Advanced (4 skills, ~1,600 lines)
 ├─ on-device-ai                  Foundation Models
 ├─ app-intents                   Siri, Shortcuts
 ├─ accessibility-advanced        A11y
@@ -300,7 +300,7 @@ cd swift-ios-skills
 cp /mnt/user-data/outputs/* .
 
 # Create folder structure
-mkdir -p phase1 phase2 phase3 future templates examples
+mkdir -p phase1 phase2 phase3 phase4 templates examples
 mv skill-*.md phase1/
 
 # Initial commit

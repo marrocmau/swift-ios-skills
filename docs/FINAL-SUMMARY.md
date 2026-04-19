@@ -93,7 +93,7 @@
 | Phase 1 | 9 skills | ✅ Complete |
 | Phase 2 | 6 skills | 📝 Batch reference |
 | Phase 3 | 6 skills | 📝 Batch reference |
-| Future | 4 skills | 📝 Batch reference |
+| Phase 4 | 4 skills | 📝 Batch reference |
 | **Total** | **25 skills** | ✅ Ready |
 
 ---
@@ -163,7 +163,7 @@ cd swift-ios-skills
 
 ### Step 2: Organize Folder Structure (5 min)
 ```bash
-mkdir -p phase1 phase2 phase3 future reference docs
+mkdir -p phase1 phase2 phase3 phase4 reference docs
 
 # Move files
 mv ios_mr_SwiftUIArchitecture.md phase1/
