@@ -93,7 +93,7 @@ When creating a new skill:
 ## 🎯 Areas Needing Contribution
 
 ### High Priority
-- [ ] Add more Onda 2/3 individual skill files (now in batch)
+- [ ] Add more Phase 2/3 individual skill files (now in batch)
 - [ ] Create example project (login app)
 - [ ] Add video tutorials linking to skills
 - [ ] Translate skills to other languages (IT, DE, FR, ES)

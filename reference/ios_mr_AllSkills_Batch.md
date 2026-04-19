@@ -1,15 +1,15 @@
 ---
-name: SKILLS-BATCH-ONDA1234
-description: Batch of 16 skills (Onda 1 remaining, Onda 2, Onda 3, Future) - Comprehensive iOS skill set
+name: SKILLS-BATCH-PHASE1234
+description: Batch of 16 skills (Phase 1 remaining, Phase 2, Phase 3, Future) - Comprehensive iOS skill set
 ---
 
-# iOS Skills Batch: 16 Core Skills (Onda 1-Future)
+# iOS Skills Batch: 16 Core Skills (Phase 1-Future)
 
 This document contains 16 production-ready skills for iOS development with Claude Code.
 
 ---
 
-## ONDA 1: Foundation (Skills 8-9)
+## PHASE 1: Foundation (Skills 8-9)
 
 ### Skill 8: swiftui-forms
 
@@ -278,7 +278,7 @@ struct ImagePickerView: View {
 
 ---
 
-## ONDA 2: Optimization (Skills 10-15)
+## PHASE 2: Optimization (Skills 10-15)
 
 ### Skill 10: sentry-setup
 
@@ -546,7 +546,7 @@ struct LoginViewModel {
 
 ---
 
-## ONDA 3: Growth (Skills 16-21)
+## PHASE 3: Growth (Skills 16-21)
 
 ### Skill 16: aso-keyword-research
 
@@ -576,7 +576,7 @@ let italianKeywords = [
  ASO Strategy:
  1. Pick 3-5 high-opportunity keywords
  2. App name: Main keyword (if opportunity > 1000)
- 3. Subtitle: Secondary keyword (if opportunity > 500)
+ 3. Subtitle: Secphasery keyword (if opportunity > 500)
  4. Keywords field: Long-tail keywords (comma-separated)
  5. Description: Natural use of keywords (not spammy)
  6. A/B test with phased rollout
@@ -904,9 +904,9 @@ final class StoreKitManager {
 
 ## Summary
 
-- **Onda 1:** 9 skills (5 already created + 4 here)
-- **Onda 2:** 6 skills
-- **Onda 3:** 6 skills
+- **Phase 1:** 9 skills (5 already created + 4 here)
+- **Phase 2:** 6 skills
+- **Phase 3:** 6 skills
 - **Future:** 4 skills
 - **Total:** 25 skills
 

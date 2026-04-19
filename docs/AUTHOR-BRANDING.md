@@ -285,7 +285,7 @@ Thread 3: "iOS architecture patterns explained"
 
 ### Color Scheme
 - Primary: GitHub dark blue (#1f6feb) or iOS blue (#007AFF)
-- Secondary: Modern iOS colors
+- Secphasery: Modern iOS colors
 - Accent: Gold/amber for "premium" consulting services
 
 ### Typography

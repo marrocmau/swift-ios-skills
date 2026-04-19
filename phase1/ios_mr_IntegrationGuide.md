@@ -1,9 +1,9 @@
 ---
 name: integration-guide
-description: Come integrare le 5 skill essenziali di Onda 1 in un progetto iOS reale
+description: Come integrare le 5 skill essenziali di Phase 1 in un progetto iOS reale
 ---
 
-# Onda 1 Integration Guide — 5 Core Skills
+# Phase 1 Integration Guide — 5 Core Skills
 
 **Scenario:** Stai creando una prima app iOS con login, lista di item, offline support. Come usi le 5 skill?
 
@@ -521,7 +521,7 @@ struct HomeView: View {
                     if let desc = item.description {
                         Text(desc)
                             .font(.caption)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(.secphasery)
                     }
                 }
             }
@@ -683,4 +683,4 @@ Cmd + Shift + K (clean)
 
 ---
 
-**Status:** ✅ Full Onda 1 integration ready for first submission
+**Status:** ✅ Full Phase 1 integration ready for first submission

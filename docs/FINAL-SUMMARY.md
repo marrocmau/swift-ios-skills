@@ -62,7 +62,7 @@
 - COMMUNITY-FOCUS-STATEMENT.md (messaging)
 - SKILL-INVENTORY-COMPLETE.md (decision tool)
 - ANALYSIS-swift-ios-skills.md (security + competitor analysis)
-- SKILLS-ONDA1-SUMMARY.md (deep dive)
+- SKILLS-PHASE1-SUMMARY.md (deep dive)
 
 **Supporting Templates:**
 - PROGRESS.md (project tracking)
@@ -88,7 +88,7 @@
 
 ### 5. All 25 Skills Cataloged
 
-| Onda | Skills | Status |
+| Phase | Skills | Status |
 |---|---|---|
 | Phase 1 | 9 skills | ✅ Complete |
 | Phase 2 | 6 skills | 📝 Batch reference |
@@ -107,7 +107,7 @@ swift-ios-skills/
 ├── README.md                        (GitHub landing)
 ├── SKILLS-NAMING-GUIDE.md          (Discovery guide)
 │
-├── onda1/                           (6 skills + guide)
+├── phase1/                           (6 skills + guide)
 │   ├── ios_mr_SwiftUIArchitecture.md
 │   ├── ios_mr_Networking.md
 │   ├── ios_mr_Testing.md
@@ -163,11 +163,11 @@ cd swift-ios-skills
 
 ### Step 2: Organize Folder Structure (5 min)
 ```bash
-mkdir -p onda1 onda2 onda3 future reference docs
+mkdir -p phase1 phase2 phase3 future reference docs
 
 # Move files
-mv ios_mr_SwiftUIArchitecture.md onda1/
-mv ios_mr_Networking.md onda1/
+mv ios_mr_SwiftUIArchitecture.md phase1/
+mv ios_mr_Networking.md phase1/
 # ... etc
 
 mv ios_mr_AllSkills_Batch.md reference/

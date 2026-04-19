@@ -177,7 +177,7 @@ swift-ios-skills/
 ├── LICENSE                            MIT License
 ├── SKILL-INVENTORY-COMPLETE.md       Decision matrix + effort estimates
 │
-├── onda1/                            (9 skills)
+├── phase1/                           (9 skills)
 │   ├── skill-swiftui-architecture.md
 │   ├── skill-ios-networking.md
 │   ├── skill-swift-testing.md
@@ -188,7 +188,7 @@ swift-ios-skills/
 │   ├── skill-image-handling.md
 │   └── integration-guide.md
 │
-├── onda2/                            (6 skills)
+├── phase2/                           (6 skills)
 │   ├── skill-sentry-setup.md
 │   ├── skill-revenuecat-subscription.md
 │   ├── skill-fastlane-automation.md
@@ -196,7 +196,7 @@ swift-ios-skills/
 │   ├── skill-push-notifications.md
 │   └── skill-analytics-integration.md
 │
-├── onda3/                            (6 skills)
+├── phase3/                           (6 skills)
 │   ├── skill-aso-keyword-research.md
 │   ├── skill-in-app-review-prompt.md
 │   ├── skill-deep-linking.md
@@ -217,8 +217,8 @@ swift-ios-skills/
 │   └── session-end.md
 │
 └── examples/
-    ├── login-app-complete/          Onda 1 complete example
-    ├── metrics-dashboard/           Onda 2 example
+    ├── login-app-complete/          Phase 1 complete example
+    ├── metrics-dashboard/           Phase 2 example
     └── multi-app-portfolio/         3 apps pattern
 ```
 
@@ -227,13 +227,13 @@ swift-ios-skills/
 ## ⏱️ Timeline: Your Journey
 
 ```
-Week 1-2: Onda 1 (Foundation)
+Week 1-2: Phase 1 (Foundation)
 ├─ 8h: Read & understand skills
 ├─ 8h: Build first app (login + list + offline)
 ├─ 4h: Write tests, optimize
 └─ Result: App on TestFlight ✅
 
-Week 3-4: Onda 2 (Optimization)
+Week 3-4: Phase 2 (Optimization)
 ├─ 2h: Sentry crash reporting
 ├─ 3h: RevenueCat subscription flow
 ├─ 3h: Fastlane automation
@@ -241,7 +241,7 @@ Week 3-4: Onda 2 (Optimization)
 ├─ 4h: Analytics setup
 └─ Result: App live, monitored ✅
 
-Week 5+: Onda 3 (Growth)
+Week 5+: Phase 3 (Growth)
 ├─ 3h: ASO keyword research
 ├─ 2h: In-app review prompts
 ├─ 3h: Deep linking
@@ -328,11 +328,11 @@ This repository helps you:
 
 Track your journey:
 
-- [ ] Onda 1: First app submitted (Week 2)
-- [ ] Onda 1: App approved & live (Week 3)
-- [ ] Onda 2: 100 daily active users (Week 4)
-- [ ] Onda 2: First €1k revenue (Week 5)
-- [ ] Onda 3: App #2 submitted (Week 6)
+- [ ] Phase 1: First app submitted (Week 2)
+- [ ] Phase 1: App approved & live (Week 3)
+- [ ] Phase 2: 100 daily active users (Week 4)
+- [ ] Phase 2: First €1k revenue (Week 5)
+- [ ] Phase 3: App #2 submitted (Week 6)
 - [ ] Portfolio: €5k monthly revenue (Month 3)
 - [ ] Portfolio: 3 apps + €10k monthly (Month 6)
 - [ ] Goal: €200k annual revenue (Year 2)
@@ -362,7 +362,7 @@ A: Yes. MIT licensed. No restrictions.
 **Q: Do these skills work with Claude Code?**  
 A: Yes. Tested with Claude Code + Cursor + GitHub Copilot.
 
-**Q: How many hours to ship an app using Onda 1?**  
+**Q: How many hours to ship an app using Phase 1?**  
 A: ~20 hours total (8h reading + 12h building).
 
 **Q: Can I modify the skills for my needs?**  
@@ -371,7 +371,7 @@ A: Yes. Fork, customize, use freely.
 **Q: What if I find a bug?**  
 A: Open an issue or PR. Community contributions welcome.
 
-**Q: When's Onda 4?**  
+**Q: When's Phase 4?**  
 A: Q2 2026 — Enterprise B2B patterns.
 
 ---
@@ -397,7 +397,7 @@ Built from experience shipping 100+ iOS apps across:
 
 ## 🚀 Ready to Ship?
 
-1. Pick your Onda (1, 2, or 3)
+1. Pick your Phase (1, 2, or 3)
 2. Read the skills (1-2 hours)
 3. Copy patterns to your project
 4. Use Claude Code to accelerate
@@ -418,22 +418,23 @@ Built from experience shipping 100+ iOS apps across:
 
 ## 👤 About the Author
 
-**Rocco Marino** — Senior Manager, Big Four, SAP BTP Solution Architect
+**Rocco Marino** — Passionate Software Engineer & Enterprise Architect
 
-After 100+ iOS app launches and deep enterprise architecture experience, I'm sharing 25 production-ready iOS patterns with the community.
+I'm a software engineer with a strong IT background and a passion for building systems that are useful, solid, and understandable. Over the years I've moved across development, architecture, cloud platforms and leadership—always with the same goal: create technology that solves real business problems.
+
+I work at the intersection of enterprise architecture and modern technology, where cloud platforms, AI capabilities and integration patterns become real operating models rather than slideware. My role is to translate complexity into scalable, governable, and usable architectures for real teams.
+
+I specialize in solution landscapes that connect enterprise constraints with modern engineering practices—especially across cloud-native services, automation, and AI-enabled systems. The objective is always the same: help organizations adopt innovation without losing clarity, control, or execution speed.
+
+**Subject Matter Expert on SAP BTP** and the broader SAP technology ecosystem, where integration, data, extension, and automation must work together in enterprise contexts. I help organizations understand how to use SAP platforms as enablers of modern architecture, not just as products to configure.
+
+My strongest focus today is where **SAP BTP meets AI, cloud, and practical enterprise innovation**: generative AI scenarios, intelligent automation, platform architecture, and SAP-centered modernization grounded in real business value and technical sustainability.
 
 ### Connect
 
 - 🔗 **Website:** [mrmarino.it](https://mrmarino.it)
 - 💼 **LinkedIn:** [rocco-marino-mr](https://www.linkedin.com/in/rocco-marino-mr/)
 - 𝕏 **X:** [@im_mrmarino](https://twitter.com/im_mrmarino)
-
-### Services
-
-- 🏗️ **Enterprise iOS Architecture** — Large-scale iOS systems
-- 💻 **Claude Code + Swift** — AI-assisted development
-- 📱 **Digital Product Strategy** — Building scalable apps
-- 🎓 **Consulting & Training** — iOS + architecture patterns
 
 ---
 

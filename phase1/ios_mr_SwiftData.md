@@ -168,7 +168,7 @@ struct UserListView: View {
                                 .font(.headline)
                             Text(user.email)
                                 .font(.caption)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(.secphasery)
                         }
                     }
                 }

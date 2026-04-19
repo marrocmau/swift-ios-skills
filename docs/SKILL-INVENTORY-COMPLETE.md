@@ -2,7 +2,7 @@
 name: SKILL-INVENTORY-COMPLETE
 description: |
   Elenco completo di skills iOS per il tuo timeline €200k/24mesi.
-  Organizzato per Onda + priority. Scegli quali creare ora, quali dopo.
+  Organizzato per Phase + priority. Scegli quali creare ora, quali dopo.
 ---
 
 # Complete iOS Skills Inventory
@@ -15,11 +15,11 @@ description: |
 
 ---
 
-## 🔴 ONDA 1: Foundation (First Submission)
+## 🔴 PHASE 1: Foundation (First Submission)
 
 **Status:** 5 skills già creati. Aggiungi altri per completare?
 
-### Onda 1 - Already Created ✅
+### Phase 1 - Already Created ✅
 
 1. ✅ **swiftui-architecture** (MVVM + @Observable)
 2. ✅ **ios-networking** (URLSession + retry)
@@ -27,7 +27,7 @@ description: |
 4. ✅ **swiftdata-persistence** (Local storage)
 5. ✅ **integration-guide** (Full walkthrough)
 
-### Onda 1 - Potentially Add (Choose from below)
+### Phase 1 - Potentially Add (Choose from below)
 
 **Essential (Strongly Recommended):**
 
@@ -77,7 +77,7 @@ description: |
 
 ---
 
-## 🟡 ONDA 2: Optimization (Weeks 3-4)
+## 🟡 PHASE 2: Optimization (Weeks 3-4)
 
 **Target:** Post-launch optimization + monitoring
 
@@ -152,7 +152,7 @@ description: |
 
 ---
 
-## 🟢 ONDA 3: Growth (Weeks 5+)
+## 🟢 PHASE 3: Growth (Weeks 5+)
 
 **Target:** User acquisition + retention optimization
 
@@ -196,7 +196,7 @@ description: |
     - Gesture feedback
     - Micro-interactions
     - Loading states
-    - **When:** Onda 3, before app 2 release
+    - **When:** Phase 3, before app 2 release
     - **Effort:** 2-3 hours
     - **Lines:** ~420
     - **Why:** Animations = perceived performance +40%
@@ -242,7 +242,7 @@ description: |
     - Siri voice commands
     - Shortcuts support
     - Apple Intelligence actions
-    - **When:** Onda 3+ (app 2+)
+    - **When:** Phase 3+ (app 2+)
     - **Effort:** 2-3 hours
     - **Lines:** ~380
     - **Why:** Alternative engagement channel
@@ -272,7 +272,7 @@ description: |
 
 ## Summary Table: All 25 Skills
 
-| # | Skill | Onda | Priority | Effort | Lines | Status |
+| # | Skill | Phase | Priority | Effort | Lines | Status |
 |---|---|---|---|---|---|---|
 | 1-5 | **Core 5** | 1 | ⭐⭐⭐⭐⭐ | 8h | 2,738 | ✅ Done |
 | 6 | ios-security | 1 | ⭐⭐⭐⭐⭐ | 2-3h | ~480 | 🔲 |
@@ -300,7 +300,7 @@ description: |
 
 ## Recommended Path (Per Timeline)
 
-### Week 1-2 (Onda 1 Sprint)
+### Week 1-2 (Phase 1 Sprint)
 **Create before first submission:**
 - ✅ 5 core skills (done)
 - ⭐ ios-security (critical)
@@ -309,7 +309,7 @@ description: |
 
 **Total effort:** 5-7 hours (plus building actual app = 16 hours total)
 
-### Week 3-4 (Onda 2 Sprint)
+### Week 3-4 (Phase 2 Sprint)
 **Create after TestFlight passes:**
 - ⭐ sentry-setup (live monitoring)
 - ⭐ revenuecat-subscription (if monetized)
@@ -319,7 +319,7 @@ description: |
 
 **Total effort:** 10-15 hours (plus optimizing app + marketing = 24 hours total)
 
-### Week 5+ (Onda 3 Sprint)
+### Week 5+ (Phase 3 Sprint)
 **Create after app live 1 month:**
 - ⭐ aso-keyword-research (free users)
 - ⭐ in-app-review-prompt (ratings)
@@ -330,7 +330,7 @@ description: |
 **Total effort:** 10-12 hours (plus launching app 2 = 30 hours total)
 
 ### App 2-3 (Parallel)
-**Use Onda 1 skills + add:**
+**Use Phase 1 skills + add:**
 - widgetkit-homescreen
 - live-activities
 - accessibility-advanced
@@ -342,9 +342,9 @@ description: |
 
 | Phase | Skills | Hours | Outcome |
 |---|---|---|---|
-| Onda 1 | 5 core + security + app-review | ~18h | 1st app on App Store |
-| Onda 2 | sentry + revenuecat + fastlane + metadata | ~20h | 2nd app + analytics |
-| Onda 3 | ASO + reviews + animations + widgets | ~20h | 3rd app + growth |
+| Phase 1 | 5 core + security + app-review | ~18h | 1st app on App Store |
+| Phase 2 | sentry + revenuecat + fastlane + metadata | ~20h | 2nd app + analytics |
+| Phase 3 | ASO + reviews + animations + widgets | ~20h | 3rd app + growth |
 | **TOTAL** | **20 skills** | **~58h** | **3 apps, €200k** |
 
 **Reality check:**
@@ -373,7 +373,7 @@ description: |
 10. swiftui-animations (polish, app 2+)
 
 **Not urgent:**
-- Everything else (Onda 3+, Future)
+- Everything else (Phase 3+, Future)
 
 ---
 
@@ -387,7 +387,7 @@ description: |
 - **Total:** 2 skills, 3-4 hours, ~830 lines
 - **Outcome:** Secure first submission
 
-**Option B (Full Onda 1):**
+**Option B (Full Phase 1):**
 - iOS-security
 - app-store-review
 - swiftui-forms
@@ -395,7 +395,7 @@ description: |
 - **Total:** 4 skills, 7-8 hours, ~1,630 lines
 - **Outcome:** Polished first app
 
-**Option C (Onda 1 + Start Onda 2):**
+**Option C (Phase 1 + Start Phase 2):**
 - iOS-security
 - app-store-review
 - swiftui-forms

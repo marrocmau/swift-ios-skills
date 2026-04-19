@@ -36,7 +36,7 @@
    - Recommended path
    - 4 options to choose from
 
-5. **[SKILLS-ONDA1-SUMMARY.md](SKILLS-ONDA1-SUMMARY.md)** ← Phase 1 deep dive
+5. **[SKILLS-PHASE1-SUMMARY.md](SKILLS-PHASE1-SUMMARY.md)** ← Phase 1 deep dive
    - 5 core skills analysis
    - How they work together
    - Integration checklist
@@ -65,7 +65,7 @@
 
 ### 📦 Phase 2-4: Reference (16 Skills)
 
-14. **[SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md)** — All remaining skills
+14. **[SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md)** — All remaining skills
     - Phase 1: swiftui-forms, image-handling
     - Phase 2: sentry, revenuecat, fastlane, metadata, push, analytics (6)
     - Phase 3: aso, reviews, deep-linking, animations, widgets, live-activities (6)
@@ -103,14 +103,14 @@
 
 ### If You're Optimizing Your Live App (WEEK 3-4)
 
-1. Read: **[SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md)** Phase 2 section
+1. Read: **[SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md)** Phase 2 section
 2. Pick: sentry-setup, revenuecat, analytics
 3. Implement (3-5 hours each)
 4. Monitor & optimize
 
 ### If You're Growing Your User Base (WEEK 5+)
 
-1. Read: **[SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md)** Phase 3 section
+1. Read: **[SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md)** Phase 3 section
 2. Implement: aso, reviews, deep-linking
 3. Launch app #2
 4. Measure & iterate
@@ -156,7 +156,7 @@
 → [integration-guide.md](integration-guide.md)
 
 **I want to optimize my app:**
-→ [SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md) (Phase 2 section)
+→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Phase 2 section)
 
 **I want to see all skills:**
 → [MANIFEST.md](MANIFEST.md)
@@ -164,7 +164,7 @@
 **I want to compare with competitors:**
 → [ANALYSIS-swift-ios-skills.md](ANALYSIS-swift-ios-skills.md)
 
-### By Onda
+### By Phase
 
 **Phase 1 (Foundation):**
 1. [integration-guide.md](integration-guide.md) — Complete walkthrough
@@ -174,16 +174,16 @@
 5. [skill-swiftdata-persistence.md](skill-swiftdata-persistence.md)
 6. [skill-ios-security.md](skill-ios-security.md)
 7. [skill-app-store-review.md](skill-app-store-review.md)
-+ [SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md) (swiftui-forms, image-handling)
++ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (swiftui-forms, image-handling)
 
 **Phase 2 (Optimization):**
-→ [SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md) (Phase 2 section)
+→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Phase 2 section)
 
 **Phase 3 (Growth):**
-→ [SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md) (Phase 3 section)
+→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Phase 3 section)
 
 **Future:**
-→ [SKILLS-BATCH-ONDA1234.md](SKILLS-BATCH-ONDA1234.md) (Future section)
+→ [SKILLS-BATCH-PHASE1234.md](SKILLS-BATCH-PHASE1234.md) (Future section)
 
 ---
 
@@ -194,7 +194,7 @@
 - [ ] Create GitHub repo
 - [ ] Copy all 22 files
 - [ ] Add MIT LICENSE file
-- [ ] Create folder structure (onda1/, onda2/, onda3/, future/, templates/)
+- [ ] Create folder structure (phase1/, phase2/, phase3/, future/, templates/)
 - [ ] Add GitHub description
 - [ ] Add topics: swift, ios, claude-code, xcode, swiftui
 - [ ] Enable discussions

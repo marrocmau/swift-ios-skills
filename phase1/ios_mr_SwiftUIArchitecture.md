@@ -188,7 +188,7 @@ struct LoginView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     Text("Al tuo account")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.secphasery)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 

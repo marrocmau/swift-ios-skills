@@ -391,7 +391,7 @@ struct ChecklistItem {
 ## 5. Build & Submit Automation
 
 ```swift
-// Fastlane build and submission (Onda 2 skill)
+// Fastlane build and submission (Phase 2 skill)
 // For now, manual steps:
 
 /*
@@ -504,8 +504,8 @@ struct AppVersion {
 ## Related Skills
 
 - **ios-security** — Encryption and permissions
-- **sentry-setup** (Onda 2) — Crash monitoring
-- **fastlane-automation** (Onda 2) — Automated submission
+- **sentry-setup** (Phase 2) — Crash monitoring
+- **fastlane-automation** (Phase 2) — Automated submission
 
 ---
 

@@ -262,7 +262,7 @@ Completed Phase 1? You know:
 | Status | Meaning | Action |
 |---|---|---|
 | ✅ Done | Fully created, tested, documented | Copy to your project |
-| 📝 Reference | Included in batch files, use as reference | Read SKILLS-BATCH-ONDA1234.md |
+| 📝 Reference | Included in batch files, use as reference | Read SKILLS-BATCH-PHASE1234.md |
 | 🔲 Not Yet | Planned but not detailed | Watch repo for updates |
 
 ---
@@ -282,12 +282,12 @@ Phase 1 (Done):
 - integration-guide.md           (700 lines)
 
 Phase 2-4 (Reference):
-- SKILLS-BATCH-ONDA1234.md             (16 skills, ~5000 lines)
+- SKILLS-BATCH-PHASE1234.md             (16 skills, ~5000 lines)
 
 Index & Guides:
 - README-GITHUB.md                     (Main GitHub page)
 - SKILL-INVENTORY-COMPLETE.md          (All 25 with effort estimates)
-- SKILLS-ONDA1-SUMMARY.md              (Phase 1 summary)
+- SKILLS-PHASE1-SUMMARY.md              (Phase 1 summary)
 - MANIFEST.md                          (This file)
 ```
 
@@ -299,7 +299,7 @@ Index & Guides:
 
 ```bash
 # Copy skill to your project
-cp swift-ios-skills/onda1/skill-swiftui-architecture.md \
+cp swift-ios-skills/phase1/skill-swiftui-architecture.md \
    my-project/.claude/skills/
 ```
 
@@ -307,7 +307,7 @@ cp swift-ios-skills/onda1/skill-swiftui-architecture.md \
 
 ```bash
 mkdir -p my-project/.claude/skills
-cp swift-ios-skills/onda1/*.md my-project/.claude/skills/
+cp swift-ios-skills/phase1/*.md my-project/.claude/skills/
 ```
 
 ### Option 3: Reference Remotely
@@ -315,7 +315,7 @@ cp swift-ios-skills/onda1/*.md my-project/.claude/skills/
 Keep skills in external repo, reference in Claude Code:
 
 ```
-Claude: "Read https://github.com/yourname/swift-ios-skills/blob/main/onda1/skill-swiftui-architecture.md"
+Claude: "Read https://github.com/yourname/swift-ios-skills/blob/main/phase1/skill-swiftui-architecture.md"
 ```
 
 ---
@@ -397,7 +397,7 @@ Each skill includes:
 - ✅ Community (open source)
 
 **Next steps:**
-1. Pick your Onda (1, 2, or 3)
+1. Pick your Phase (1, 2, or 3)
 2. Read the INTEGRATION-GUIDE
 3. Copy patterns to your project
 4. Use Claude Code to accelerate

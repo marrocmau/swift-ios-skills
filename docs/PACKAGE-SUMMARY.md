@@ -44,7 +44,7 @@ This is your **gift back to the developer community** for:
 6. ✅ **skill-app-store-review.md** (350 lines)
 
 **Batch Reference (16 skills):**
-7. 📝 **SKILLS-BATCH-ONDA1234.md** (~5,000 lines)
+7. 📝 **SKILLS-BATCH-PHASE1234.md** (~5,000 lines)
    - Phase 1: swiftui-forms, image-handling
    - Phase 2: sentry, revenuecat, fastlane, metadata, push, analytics
    - Phase 3: aso, reviews, deep-linking, animations, widgets, live-activities
@@ -78,7 +78,7 @@ This is your **gift back to the developer community** for:
     - Effort estimates
     - Decision matrix
 
-12. 📋 **SKILLS-ONDA1-SUMMARY.md** (11 KB)
+12. 📋 **SKILLS-PHASE1-SUMMARY.md** (11 KB)
     - Phase 1 deep dive
     - Why these 5 skills chosen
     - How they work together
@@ -300,8 +300,8 @@ cd swift-ios-skills
 cp /mnt/user-data/outputs/* .
 
 # Create folder structure
-mkdir -p onda1 onda2 onda3 future templates examples
-mv skill-*.md onda1/
+mkdir -p phase1 phase2 phase3 future templates examples
+mv skill-*.md phase1/
 
 # Initial commit
 git add .
