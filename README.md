@@ -21,7 +21,7 @@ iOS developers using Claude Code, Cursor, or GitHub Copilot need:
 - ✅ Zero external dependencies (control + reliability)
 - ✅ MIT licensed (no GPL conflicts)
 
-**This repo gives exactly that:** 25 original skills tested across 100+ app launches, shared freely with the community.
+**This repo gives exactly that:** 25 production-ready skills distilled from 100+ enterprise projects, shared freely with the community.
 
 ---
 
@@ -393,17 +393,19 @@ A: Yes. Fork, customize, use freely.
 A: Open an issue or PR. Community contributions welcome.
 
 **Q: When's Phase 4?**  
-A: Q2 2026 — Enterprise B2B patterns.
+A: Available now (Week 9+) — Advanced features for production apps.
 
 ---
 
 ## 🙏 Acknowledgments
 
-Built from experience shipping 100+ iOS apps across:
-- Big Four consulting (SAP ecosystem)
-- Enterprise architecture patterns
-- Claude Code community (early adopters)
-- iOS App Store launches (2024-2026)
+Built from 100+ enterprise projects spanning:
+- **SAP & ERP Customization** — Large-scale implementations, data migrations, custom developments
+- **Integration Architectures** — Cloud platforms (AWS, GCP), middleware, API-first ecosystems
+- **Enterprise Transformation** — Digital modernization, cloud-native adoption, AI-enabled automation
+- **Big Four Consulting** — Solutions for Fortune 500 clients across DACH & EMEA regions
+- **Innovative Technologies** — Cloud-native services, intelligent automation, generative AI scenarios
+- **Open Source & Community** — Sharing patterns that work in real production environments
 
 ---
 
