@@ -69,8 +69,8 @@ User acquisition, retention optimization. **~15 hours.**
 - live-activities             Dynamic Island, real-time updates
 ```
 
-### 🔵 Phase 4: Advanced (2026+)
-Apple Intelligence, advanced monetization. **~10 hours.**
+### 🔵 Phase 4: Advanced (Week 9+)
+Apple Intelligence, advanced capabilities. **~10 hours.**
 
 ```
 - on-device-ai                Foundation Models, local LLM
@@ -167,6 +167,19 @@ Claude: [checks ios-networking checklist]
 ❌ Missing: Error recovery for 401 unauthorized
 ```
 
+### Pattern 4: Advanced Features (Phase 4)
+
+```
+You: "Add on-device AI to my app for smart features"
+
+Claude: [reads on-device-ai skill from Phase 4]
+→ Implements Foundation Models integration
+→ Adds local LLM inference without API calls
+→ Integrates Siri shortcuts (app-intents skill)
+→ Enhances accessibility (accessibility-advanced skill)
+→ All working, no external dependencies
+```
+
 ---
 
 ## 📊 File Structure
@@ -242,7 +255,7 @@ Week 3-4: Phase 2 (Optimization)
 ├─ 4h: Analytics setup
 └─ Result: App live, monitored ✅
 
-Week 5+: Phase 3 (Growth)
+Week 5-8: Phase 3 (Growth)
 ├─ 3h: ASO keyword research
 ├─ 2h: In-app review prompts
 ├─ 3h: Deep linking
@@ -250,8 +263,15 @@ Week 5+: Phase 3 (Growth)
 ├─ 3h: Widgets
 └─ Result: 2nd app launched, growth metrics ✅
 
-Month 6+: App 3, Scaling, €200k Goal
-└─ Repeat with knowledge, share back to community
+Week 9+: Phase 4 (Advanced)
+├─ 3h: On-device AI integration
+├─ 2h: App Intents & Siri
+├─ 2h: Advanced accessibility
+├─ 2h: Advanced monetization
+└─ Result: 3rd app with AI features ✅
+
+Month 6+: Scaling & Community
+└─ Repeat with knowledge, share patterns back to community
 ```
 
 ---
@@ -311,32 +331,32 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📈 Your Growth Path
 
-This repository helps you:
+This repository helps you build:
 
 ```
-| Timeline | Achievement | Visibility |
-|----------|-------------|------------|
-| Month 1  | 1st app live | GitHub followers +50 |
-| Month 3  | 2nd app + €5k/mo | Twitter engagement |
-| Month 6  | 3 apps + €10k/mo | Speaking opportunities |
-| Month 12 | €100k revenue | Consulting premium |
-| Month 24 | €200k goal + expert status | Agency partnerships |
+| Timeline | Achievement | Community Impact |
+|----------|-------------|------------------|
+| Month 1  | 1st app live on App Store | GitHub followers grow |
+| Month 3  | 2nd app + monetization | Twitter/X engagement increases |
+| Month 6  | 3 apps in portfolio | Speaking invitations arrive |
+| Month 12 | Expert reputation established | Consulting opportunities |
+| Month 24 | Industry recognition | Open source leadership |
 ```
 
 ---
 
 ## 📊 Success Metrics
 
-Track your journey:
+Track your development:
 
 - [ ] Phase 1: First app submitted (Week 2)
-- [ ] Phase 1: App approved & live (Week 3)
-- [ ] Phase 2: 100 daily active users (Week 4)
-- [ ] Phase 2: First €1k revenue (Week 5)
-- [ ] Phase 3: App #2 submitted (Week 6)
-- [ ] Portfolio: €5k monthly revenue (Month 3)
-- [ ] Portfolio: 3 apps + €10k monthly (Month 6)
-- [ ] Goal: €200k annual revenue (Year 2)
+- [ ] Phase 1: App approved & live on App Store (Week 3)
+- [ ] Phase 2: 100+ daily active users (Week 4)
+- [ ] Phase 2: Crash reporting & analytics live (Week 5)
+- [ ] Phase 3: App #2 submitted with monetization (Week 6)
+- [ ] Phase 3: Integrated ASO & growth features (Month 3)
+- [ ] Phase 4: 3 apps in portfolio with advanced features (Month 6)
+- [ ] Community: Skills shared & adopted by others (Year 1+)
 
 ---
 
@@ -419,21 +439,17 @@ Built from experience shipping 100+ iOS apps across:
 
 ## 👤 About the Author
 
-**Rocco Marino** — Passionate Software Engineer & Enterprise Architect
+**Rocco Marino** — Software Engineer & Enterprise Architect
 
-I'm a software engineer with a strong IT background and a passion for building systems that are useful, solid, and understandable. Over the years I've moved across development, architecture, cloud platforms and leadership—always with the same goal: create technology that solves real business problems.
+I build systems at the intersection of enterprise architecture, cloud platforms, and AI. My work focuses on translating complexity into scalable, practical architectures that organizations can actually use—not just read about.
 
-I work at the intersection of enterprise architecture and modern technology, where cloud platforms, AI capabilities and integration patterns become real operating models rather than slideware. My role is to translate complexity into scalable, governable, and usable architectures for real teams.
+**Subject Matter Expert on SAP BTP** with a strong focus on where SAP, cloud, and AI converge: intelligent automation, platform architecture, and enterprise modernization grounded in real business value.
 
-I specialize in solution landscapes that connect enterprise constraints with modern engineering practices—especially across cloud-native services, automation, and AI-enabled systems. The objective is always the same: help organizations adopt innovation without losing clarity, control, or execution speed.
+These iOS skills come from shipping apps at scale and believing that good patterns—the kind that actually work—should be shared freely with the community.
 
-**Subject Matter Expert on SAP BTP** and the broader SAP technology ecosystem, where integration, data, extension, and automation must work together in enterprise contexts. I help organizations understand how to use SAP platforms as enablers of modern architecture, not just as products to configure.
-
-My strongest focus today is where **SAP BTP meets AI, cloud, and practical enterprise innovation**: generative AI scenarios, intelligent automation, platform architecture, and SAP-centered modernization grounded in real business value and technical sustainability.
+**Learn more:** [mrmarino.it](https://mrmarino.it)
 
 ### Connect
-
-- 🔗 **Website:** [mrmarino.it](https://mrmarino.it)
 - 💼 **LinkedIn:** [rocco-marino-mr](https://www.linkedin.com/in/rocco-marino-mr/)
 - 𝕏 **X:** [@im_mrmarino](https://twitter.com/im_mrmarino)
 
