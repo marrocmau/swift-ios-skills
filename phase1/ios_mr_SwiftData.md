@@ -87,18 +87,46 @@ final class UserPreferences {
     var language: String = "en"
     var notificationsEnabled: Bool = true
 }
+
+// MARK: - Inheritance (Xcode 26 / Swift 6 Pattern)
+// Use inheritance for shared logic across multiple entity types
+
+@Model
+class BaseEntity {
+    @Attribute(.unique) var id: UUID
+    var createdAt: Date = Date()
+    var updatedAt: Date?
+    
+    init(id: UUID = UUID()) {
+        self.id = id
+        self.createdAt = Date()
+    }
+}
+
+@Model
+final class PremiumUser: BaseEntity {
+    var subscriptionTier: String
+    var expiresAt: Date
+    
+    init(id: UUID = UUID(), subscriptionTier: String, expiresAt: Date) {
+        self.subscriptionTier = subscriptionTier
+        self.expiresAt = expiresAt
+        super.init(id: id)
+    }
+}
 ```
 
 **Rules:**
 - `@Model` = persistente
 - `@Attribute(.unique)` = unique constraint
 - `@Relationship(deleteRule: .cascade)` = delete relativo user
+- **Inheritance:** Supportata tra classi `@Model`. La classe base non deve essere `final`.
 - Primitive types (String, Int, Date, UUID, Data) sono automatici
 - Custom types devono essere @Codable se non sono @Model
 
 ---
 
-## Setup: ModelContainer
+## Setup: ModelContainer & Versioning
 
 ```swift
 // App.swift
@@ -111,17 +139,18 @@ struct MyApp: App {
     
     init() {
         do {
-            // Setup container con schema
+            // Versioned Schema for safe migrations
             let schema = Schema([
                 User.self,
                 Post.self,
-                CacheItem.self
+                CacheItem.self,
+                PremiumUser.self
             ])
             
             let config = ModelConfiguration(
                 schema: schema,
-                isStoredInMemoryOnly: false,  // true solo per test
-                cloudKitDatabase: .private    // Per CloudKit sync
+                isStoredInMemoryOnly: false,
+                cloudKitDatabase: .private
             )
             
             container = try ModelContainer(
@@ -138,6 +167,36 @@ struct MyApp: App {
             ContentView()
         }
         .modelContainer(container)
+    }
+}
+```
+
+---
+
+## Advanced Operations: Batch & Background (High Performance)
+
+```swift
+// For AI-heavy data processing or large syncs
+extension ModelContext {
+    func performBatchInsert<T: PersistentModel>(_ models: [T]) throws {
+        // Xcode 26 recommendation: use background tasks for large datasets
+        for model in models {
+            insert(model)
+        }
+        try save()
+    }
+    
+    // Efficient background processing
+    func backgroundSync(models: [PersistentModel]) async throws {
+        let container = self.container
+        let taskContext = ModelContext(container)
+        
+        try await Task.detached {
+            for model in models {
+                taskContext.insert(model)
+            }
+            try taskContext.save()
+        }.value
     }
 }
 ```

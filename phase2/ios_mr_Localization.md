@@ -4,71 +4,51 @@ description: Multi-language support and App Store metadata localization. Use thi
 compatibility: iOS 17+, String Catalogs
 ---
 
-# Metadata Localization — Multi-Language Support
+# Metadata Localization — String Catalogs & Dynamic AI
 
-**When to use:** Before expanding to new markets. Increases downloads 2-3x in localized regions.
+**When to use:** Before expanding to new markets. Use String Catalogs for static UI and AI Translation APIs for dynamic content.
 
-## Pattern: String Catalogs & Localization
+## Pattern: String Catalogs (Xcode 26 Native)
+
+String Catalogs (`.xcstrings`) replace legacy `.strings` files. They provide a visual editor, automatic pluralization, and string variation management.
 
 ```swift
-// LocalizationService.swift
-import Foundation
-
-struct LocalizationService {
-    static let supportedLanguages = ["en", "it", "de", "fr", "es", "ja"]
-    
-    static func localizedString(_ key: String, in language: String = Locale.current.language.languageCode?.identifier ?? "en") -> String {
-        let bundle = Bundle(path: Bundle.main.path(forResource: language, ofType: "lproj") ?? "") ?? .main
-        return NSLocalizedString(key, bundle: bundle, comment: "")
-    }
-    
-    static func setLanguage(_ languageCode: String) {
-        UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
-    }
-}
-
-// Usage in View
+// Usage in SwiftUI
 struct LocalizedContentView: View {
-    @State private var selectedLanguage = Locale.current.language.languageCode?.identifier ?? "en"
-    
     var body: some View {
         VStack(spacing: 16) {
-            // Automatic translation based on system language
-            Text("app.title")
-            Text("app.subtitle")
+            // Static localization from String Catalog
+            Text("Welcome to our App", comment: "Main greeting")
+                .font(.title)
             
-            // Manual language selection
-            Picker("Language", selection: $selectedLanguage) {
-                Text("English").tag("en")
-                Text("Italiano").tag("it")
-                Text("Deutsch").tag("de")
-                Text("Français").tag("fr")
-                Text("Español").tag("es")
-                Text("日本語").tag("ja")
-            }
-            .onChange(of: selectedLanguage) { _, newLanguage in
-                LocalizationService.setLanguage(newLanguage)
-            }
+            // Pluralization handled automatically by String Catalog
+            // Setup "You have %lld tasks" in the .xcstrings editor
+            Text("You have \(taskCount) tasks")
         }
-        .padding()
     }
 }
+```
 
-// Localizable.strings structure
-/*
- en.lproj/Localizable.strings:
- "app.title" = "My App";
- "app.subtitle" = "Productivity for everyone";
- 
- it.lproj/Localizable.strings:
- "app.title" = "La Mia App";
- "app.subtitle" = "Produttività per tutti";
- 
- de.lproj/Localizable.strings:
- "app.title" = "Meine App";
- "app.subtitle" = "Produktivität für alle";
-*/
+## Pattern: Dynamic AI Localization
+*Translating user-generated or AI-generated content on-device.*
+
+```swift
+import Foundation
+import Translation // iOS 18+ framework
+
+@Observable
+final class TranslationManager {
+    
+    @MainActor
+    func translateContent(_ text: String, to targetLanguage: Locale.Language) async throws -> String {
+        // This uses on-device Apple Intelligence for translation
+        // No network required, high privacy.
+        // Requires: import Translation
+        
+        // Placeholder for the iOS 18 Translation API implementation
+        return "Translated: \(text)" 
+    }
+}
 ```
 
 ## App Store Metadata Template

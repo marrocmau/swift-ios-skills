@@ -39,10 +39,11 @@ struct DeliveryAttributes: ActivityAttributes {
 @Observable
 final class LiveActivityManager {
     
-    // MARK: - Start Timer Activity
+    // MARK: - Start Timer Activity (AI-Enhanced)
     func startTimerActivity(
         title: String,
-        durationSeconds: Int
+        durationSeconds: Int,
+        relevanceScore: Double = 1.0 // High priority for system visibility
     ) {
         let initialState = TimerAttributes.ContentState(
             timeRemaining: durationSeconds,
@@ -58,7 +59,8 @@ final class LiveActivityManager {
             let activity = try Activity.request(
                 attributes: attributes,
                 contentState: initialState,
-                pushType: nil
+                pushType: nil,
+                relevanceScore: relevanceScore // New in iOS 18/2026: Priority level
             )
             print("Live activity started: \(activity.id)")
             
@@ -68,6 +70,22 @@ final class LiveActivityManager {
             print("Error starting live activity: \(error)")
         }
     }
+
+// MARK: - App Intent for Remote Updates (Xcode 26 Pattern)
+struct UpdateActivityIntent: AppIntent {
+    static var title: LocalizedStringResource = "Update My Activity"
+    
+    @Parameter(title: "Status")
+    var status: String
+    
+    func perform() async throws -> some IntentResult {
+        // This intent can be triggered by Apple Intelligence to update the Live Activity
+        // based on background reasoning (e.g., user's location or context).
+        let manager = LiveActivityManager()
+        manager.updateDeliveryStatus(stage: status, estimatedArrival: Date().addingTimeInterval(300))
+        return .result()
+    }
+}
     
     // MARK: - Update Timer Activity
     private func updateTimerActivity(

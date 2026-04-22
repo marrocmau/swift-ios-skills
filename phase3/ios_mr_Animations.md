@@ -107,10 +107,48 @@ struct AnimationExamples: View {
                     isAnimating.toggle()
                 }
             }
+            
+            // MARK: - Liquid Glass: MeshGradient (iOS 18+)
+            // Dynamic, fluid backgrounds that react to state
+            MeshGradient(
+                width: 3,
+                height: 3,
+                points: [
+                    [0, 0], [0.5, 0], [1, 0],
+                    [0, isAnimating ? 0.2 : 0.5], [0.5, 0.5], [1, 0.5],
+                    [0, 1], [0.5, 1], [1, 1]
+                ],
+                colors: [
+                    .indigo, .purple, .blue,
+                    .blue, .black, .purple,
+                    .black, .indigo, .blue
+                ]
+            )
+            .frame(height: 200)
+            .cornerRadius(20)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 4).repeatForever()) {
+                    isAnimating.toggle()
+                }
+            }
         }
         .padding()
-        .onAppear {
-            isAnimating = true
+    }
+}
+
+// MARK: - Text Rendering (iOS 18+ Custom Animations)
+struct GlowTextRenderer: TextRenderer {
+    func draw(layout: Text.Layout, in context: inout GraphicsContext) {
+        for line in layout {
+            for run in line {
+                for (index, glyph) in run.enumerated() {
+                    var copy = context
+                    // Apply dynamic offset/blur per character
+                    let yOffset = sin(Double(index) * 0.5) * 5
+                    copy.translateBy(x: 0, y: yOffset)
+                    copy.draw(glyph)
+                }
+            }
         }
     }
 }

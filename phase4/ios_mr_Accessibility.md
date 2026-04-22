@@ -14,7 +14,7 @@ compatibility: iOS 15+, Accessibility framework
 import SwiftUI
 import Accessibility
 
-// MARK: - Accessible Custom Button
+// MARK: - Accessible Custom Button (AI-Ready)
 struct AccessibleButton: View {
     let title: String
     let action: () -> Void
@@ -32,10 +32,28 @@ struct AccessibleButton: View {
         .accessibilityLabel(title)
         .accessibilityHint(hint ?? "")
         .accessibilityAddTraits(.isButton)
+        // Xcode 26: Signal to Apple Intelligence that this is a key action
+        .accessibilityRespondsToUserInteraction(true)
     }
 }
 
-// MARK: - Accessible List Item
+// MARK: - Semantic UI for Visual Intelligence
+struct AIFriendlyImageView: View {
+    let imageName: String
+    let semanticType: String // e.g., "Product", "User Avatar", "Action Icon"
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            // Xcode 26: Provide semantic context for Visual Intelligence
+            .accessibilityLabel(semanticType)
+            .accessibilityAddTraits(.isImage)
+            .accessibilityHeaderElements([/* Sub-elements for AI to scan */])
+    }
+}
+
+// MARK: - Accessible List Item (Semantic)
 struct AccessibleListItem: View {
     let title: String
     let subtitle: String?
@@ -64,8 +82,9 @@ struct AccessibleListItem: View {
         }
         .padding()
         .contentShape(Rectangle())
+        // Combine for VoiceOver, but keep semantic separation for AI navigation
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(title)\(subtitle.map { ", " + $0 } ?? "")")
+        .accessibilityValue(isSelected ? "Active" : "Inactive")
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }

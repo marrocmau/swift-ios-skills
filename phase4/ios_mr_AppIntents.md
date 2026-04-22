@@ -4,162 +4,112 @@ description: App Intents and Siri shortcuts integration. Use this skill when add
 compatibility: iOS 16+, AppIntents framework
 ---
 
-# App Intents — Siri & Shortcuts Integration
+# App Intents — Assistant & AI Orchestration
 
-**When to use:** After core app is complete. Intents unlock voice and automation possibilities.
+**When to use:** To expose your app's capabilities to Apple Intelligence and Siri. Intents are the "tools" the system uses to perform actions on behalf of the user.
 
-## Pattern: App Intents Implementation
+## Pattern: Assistant-Integrated Intents (Xcode 26)
 
 ```swift
 import AppIntents
 import Foundation
 
-// MARK: - Simple Intent
-struct GetTaskCountIntent: AppIntent {
-    static var title: LocalizedStringResource = "Get task count"
-    static var description = IntentDescription("Returns the number of tasks")
-    static var openAppWhenRun = false
-    
-    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
-        // Query database
-        let count = 42
-        return .result(value: count)
-    }
-}
-
-// MARK: - Intent with Parameters
+// MARK: - Semantic Intent (Assistant-Ready)
+@AssistantIntent(schema: .system.createTask) // Xcode 26: Map to system semantic domain
 struct CreateTaskIntent: AppIntent {
     static var title: LocalizedStringResource = "Create a new task"
-    static var description = IntentDescription("Creates a task with a given title and due date")
-    static var openAppWhenRun = true
+    static var description = IntentDescription("Creates a task in the app's database")
     
-    @Parameter(title: "Task Title")
+    @Parameter(title: "Task Title", description: "The name of the task")
     var taskTitle: String
     
     @Parameter(title: "Due Date", default: Date())
     var dueDate: Date?
     
-    @Parameter(title: "Priority")
-    var priority: TaskPriority = .normal
-    
-    func perform() async throws -> some IntentResult {
-        // Create task in database
+    // Xcode 26: Define what the AI should "see" after the intent runs
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        // Business logic here
         print("Creating task: \(taskTitle)")
         
-        return .result()
+        return .result(dialog: "Okay, I've added '\(taskTitle)' to your list.")
     }
 }
 
-// MARK: - Enum Parameter
-enum TaskPriority: String, AppEnum {
-    case low = "Low"
-    case normal = "Normal"
-    case high = "High"
-    case urgent = "Urgent"
-    
-    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Priority"
-    
-    var displayRepresentation: DisplayRepresentation {
-        switch self {
-        case .low:
-            return DisplayRepresentation(stringLiteral: "Low Priority")
-        case .normal:
-            return DisplayRepresentation(stringLiteral: "Normal Priority")
-        case .high:
-            return DisplayRepresentation(stringLiteral: "High Priority")
-        case .urgent:
-            return DisplayRepresentation(stringLiteral: "Urgent")
-        }
-    }
-}
-
-// MARK: - Queries (for filtering and selection)
-struct TasksQuery: EntityQuery {
-    func entities(for identifiers: [String]) async throws -> [TaskEntity] {
-        // Return specific tasks by ID
-        return []
-    }
-    
-    func suggestedEntities() async throws -> [TaskEntity] {
-        // Return suggested tasks
-        return []
-    }
-}
-
+// MARK: - App Entity with Semantic Properties
 struct TaskEntity: AppEntity {
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Task"
+    static var defaultQuery = TasksQuery()
+    
     var id: String
+    
+    @Property(title: "Title")
     var title: String
+    
+    @Property(title: "Is Completed")
     var isCompleted: Bool
     
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(stringLiteral: title)
     }
-    
-    static var defaultQuery = TasksQuery()
-    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Task"
 }
 
-// MARK: - Intent with Entity Parameter
-struct CompleteTaskIntent: AppIntent {
-    static var title: LocalizedStringResource = "Complete task"
-    static var description = IntentDescription("Mark a task as completed")
+// MARK: - Assistant Queries (Vector Search Support)
+struct TasksQuery: EntityQuery {
+    func entities(for identifiers: [String]) async throws -> [TaskEntity] {
+        // Standard ID fetch
+        return []
+    }
     
-    @Parameter(title: "Task", requestValueDialog: "Which task?")
-    var task: TaskEntity
-    
-    func perform() async throws -> some IntentResult {
-        // Mark task as complete
-        print("Completed: \(task.title)")
-        return .result()
+    // Xcode 26: Allow Apple Intelligence to find entities by description (Semantic Search)
+    func suggestedEntities() async throws -> [TaskEntity] {
+        return []
     }
 }
+```
 
-// MARK: - Intent with Dialog Prompts
-struct AddQuickTaskIntent: AppIntent {
-    static var title: LocalizedStringResource = "Quick task"
-    
-    @Parameter(
-        title: "Task",
-        requestValueDialog: "What do you want to add?"
-    )
-    var taskTitle: String
-    
-    @Parameter(
-        title: "Priority",
-        requestValueDialog: "How urgent is this?"
-    )
-    var priority: TaskPriority = .normal
-    
-    func perform() async throws -> some IntentResult {
-        print("Quick task: \(taskTitle)")
-        return .result()
-    }
-}
+## Pattern: System-Wide Reasoning Integration
+*How to make your app a "plugin" for Apple Intelligence.*
 
+```swift
 // MARK: - App Shortcuts Provider
 struct MyAppShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
-        AppShortcut(
-            intent: GetTaskCountIntent(),
-            phrases: ["How many tasks", "Task count", "Tell me my task count"]
-        )
-        
+        // Xcode 26 Tip: Use more natural phrases to help the LLM map the user's intent
         AppShortcut(
             intent: CreateTaskIntent(),
-            phrases: ["Create task", "Add task", "New task"]
-        )
-        
-        AppShortcut(
-            intent: CompleteTaskIntent(),
-            phrases: ["Complete task", "Finish task", "Mark done"]
-        )
-        
-        AppShortcut(
-            intent: AddQuickTaskIntent(),
-            phrases: ["Quick task", "Add quickly"]
+            phrases: [
+                "Create a \(.applicationName) task named \(\.$taskTitle)",
+                "Add a new item to \(.applicationName)",
+                "Remind me to \(\.$taskTitle) in \(.applicationName)"
+            ],
+            shortTitle: "Create Task",
+            systemImageName: "plus.circle"
         )
     }
 }
+```
+
+## AI Reasoning Checklist (Xcode 26)
+
+| Requirement | Description | Benefit |
+| :--- | :--- | :--- |
+| **Semantic Mapping** | Use `@AssistantIntent(schema:)` | Maps your code to system-wide AI actions |
+| **Entity Properties** | Annotate fields with `@Property` | Allows AI to filter and search your data |
+| **Natural Language** | Provide diverse, dynamic phrases | Improves Siri's accuracy in understanding users |
+| **Tool Availability** | Mark critical actions as intents | Allows the local LLM to solve complex user requests |
+
+## Implementation Checklist
+
+- [ ] Import AppIntents framework
+- [ ] Annotate intents with `@AssistantIntent` where applicable
+- [ ] Define `AppEntity` with full `@Property` metadata
+- [ ] Implement `EntityQuery` for both ID and semantic search
+- [ ] Create natural, variable phrases in `AppShortcutsProvider`
+- [ ] Test intents using Siri voice commands
+- [ ] Verify intent behavior in the Shortcuts app
+- [ ] Add dialog prompts and success confirmations
+- [ ] Test "System-Wide Reasoning" (e.g., Siri performing cross-app actions)
+- [ ] Document the "Intent-First" architecture for future scalability
 
 // MARK: - Dynamic Shortcuts (in Shortcuts app)
 struct ParameterizedShortcut: AppShortcut {

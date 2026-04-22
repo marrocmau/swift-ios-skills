@@ -34,11 +34,13 @@ final class NotificationManager {
         }
     }
     
-    // MARK: - Local Notification
+    // MARK: - Local Notification (Intelligence-Ready)
     func sendLocalNotification(
         title: String,
         body: String,
         delay: TimeInterval,
+        relevanceScore: Double = 1.0, // 0.0 to 1.0 - Higher priority in AI summaries
+        interruptionLevel: UNNotificationInterruptionLevel = .active,
         sound: UNNotificationSound = .default,
         badge: NSNumber? = nil
     ) {
@@ -46,10 +48,15 @@ final class NotificationManager {
         content.title = title
         content.body = body
         content.sound = sound
+        content.relevanceScore = relevanceScore
+        content.interruptionLevel = interruptionLevel
         
         if let badge = badge {
             content.badge = badge
         }
+        
+        // Xcode 26 Tip: Use categories for better AI grouping
+        content.categoryIdentifier = "TASK_REMINDER"
         
         let trigger = UNTimeIntervalNotificationTrigger(
             timeInterval: delay,

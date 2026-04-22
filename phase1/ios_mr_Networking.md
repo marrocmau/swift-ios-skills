@@ -343,6 +343,32 @@ final class APIService: NSObject, URLSessionDelegate {
         
         return urlRequest
     }
+    
+    // MARK: - AI Streaming (Xcode 26 Pattern)
+    // Receive tokens one by one for LLM responses
+    
+    func stream<Request: APIRequest>(_ request: Request) async throws -> AsyncThrowingStream<String, Error> {
+        let urlRequest = try buildURLRequest(for: request)
+        let (bytes, response) = try await session.bytes(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw APIError.serverError(statusCode: (response as? HTTPURLResponse)?.statusCode ?? 500, data: nil)
+        }
+        
+        return AsyncThrowingStream { continuation in
+            Task {
+                do {
+                    for try await line in bytes.lines {
+                        // Assuming Server-Sent Events (SSE) or simple line-based streaming
+                        continuation.yield(line)
+                    }
+                    continuation.finish()
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - URLSessionDelegate for logging

@@ -4,82 +4,97 @@ description: On-device AI using Foundation Models and machine learning. Use this
 compatibility: iOS 18+, Foundation Models, CoreML
 ---
 
-# On-Device AI — Local Intelligence
+# On-Device AI — Foundation Models & Orchestration
 
-**When to use:** For privacy-sensitive AI features or offline-capable intelligence.
+**When to use:** For privacy-centric AI features, text generation, and "reasoning" tasks using Apple Intelligence Foundation Models.
 
-## Pattern: Foundation Models Integration
+## Pattern: Foundation Models Orchestration (Xcode 26)
 
 ```swift
 import Foundation
 import CoreML
+import LanguageModels // Theoretical 2026 Framework for System LLMs
 
-@available(iOS 18, *)
+@available(iOS 18.2, *)
 @Observable
-final class OnDeviceAIManager {
+final class AppleIntelligenceManager {
     
-    // MARK: - Text Generation
-    func generateText(prompt: String) async throws -> String {
-        // Foundation Models Framework (iOS 18+)
-        // Future API - placeholder for evolving capabilities
-        
-        // Example implementation pattern:
-        // let model = try await FoundationModelAPI.loadModel()
-        // let response = try await model.generate(prompt: prompt)
-        // return response.text
-        
-        return "AI-generated response based on local model"
-    }
-    
-    // MARK: - Image Classification
-    func classifyImage(_ image: UIImage) async throws -> String {
-        // Use Vision framework + CoreML
-        // Example: plant identification, object detection
-        
-        return "Classified object type"
-    }
-    
-    // MARK: - Text Embedding
-    func embedText(_ text: String) async throws -> [Float] {
-        // Generate embeddings for semantic search
-        // Useful for: similarity matching, clustering
-        
-        return Array(repeating: 0.0, count: 384)
-    }
-    
-    // MARK: - Sentiment Analysis
-    func analyzeSentiment(_ text: String) -> String {
-        // CoreML model for sentiment classification
-        // Returns: positive, negative, neutral
-        
-        return "positive"
-    }
-}
-
-// MARK: - CoreML Model Integration
-final class CoreMLModelManager {
-    
-    static let shared = CoreMLModelManager()
-    
-    // Load compiled ML model
-    func loadModel(named modelName: String) throws -> MLModel {
-        // Example: sentiment-analyzer.mlmodel
-        let config = MLModelConfiguration()
-        let model = try MLModel(
-            contentsOf: Bundle.main.url(forResource: modelName, withExtension: "mlmodelc")!,
-            configuration: config
+    // MARK: - Orchestration: Summarization & Reasoning
+    func summarize(text: String) async throws -> String {
+        // Xcode 26: Orchestrate system-wide Foundation Model
+        let model = try await LanguageModel.load(.small)
+        let response = try await model.generate(
+            prompt: "Summarize the following text briefly: \(text)",
+            maxTokens: 100
         )
-        return model
+        return response.text
     }
     
-    // Make predictions
-    func makePrediction(
-        input: MLFeatureProvider,
-        model: MLModel
-    ) throws -> MLFeatureProvider {
-        return try model.prediction(from: input)
+    // MARK: - High-Performance Buffer Handling (Span Integration)
+    // Use Span (from Phase 1) to process large text inputs without copying
+    func processMassiveInput(buffer: Span<UInt8>) async throws -> [String] {
+        // Zero-copy tokenization for LLM input
+        var tokens: [String] = []
+        // ... process buffer logic using fast-path Swift types
+        return tokens
+    }
+    
+    // MARK: - Tool Use: Triggering App Intents
+    func performIntentBasedOnAI(userInput: String) async throws {
+        let model = try await LanguageModel.load(.medium)
+        let result = try await model.reason(
+            input: userInput,
+            availableTools: [CreateTaskIntent.self, GetTaskCountIntent.self]
+        )
+        
+        // If the AI decides to call a tool (App Intent)
+        if let intent = result.suggestedIntent as? CreateTaskIntent {
+            try await intent.perform()
+        }
     }
 }
+```
+
+## Pattern: CoreML + Vision (Hybrid Approach)
+*Use CoreML for specialized tasks while using Foundation Models for general reasoning.*
+
+```swift
+final class VisionAIManager {
+    // Specialized Object Detection with YOLO/CoreML
+    func detectObjects(in image: UIImage) async throws -> [VNRecognizedObjectObservation] {
+        guard let cgImage = image.cgImage else { throw AIError.invalidImage }
+        
+        let request = VNCoreMLRequest(model: try MLModel(
+            contentsOf: Bundle.main.url(forResource: "YOLOv8", withExtension: "mlmodelc")!
+        ))
+        
+        let handler = VNImageRequestHandler(cgImage: cgImage)
+        try handler.perform([request])
+        
+        return request.results as? [VNRecognizedObjectObservation] ?? []
+    }
+}
+```
+
+## AI Implementation Comparison (Xcode 26)
+
+| Feature | Legacy Approach (CoreML) | Modern Approach (Foundation Models) |
+| :--- | :--- | :--- |
+| **Model Hosting** | Bundled with App (Heavy) | System-Wide (Shared/Light) |
+| **Task Scope** | Fixed (Classification/Detection) | General (Reasoning/Text Gen) |
+| **Privacy** | Local but custom | System-Guaranteed (Private Cloud Compute) |
+| **Performance** | Blocked on NPU | Orchestrated by System OS |
+
+## Implementation Checklist
+
+- [ ] Use `LanguageModels` for text-based reasoning and summarization.
+- [ ] Implement `AppIntents` as "tools" for the Foundation Model to use.
+- [ ] Use `Span` and `InlineArray` for low-latency buffer processing.
+- [ ] Monitor memory pressure using `MetricKit` (Phase 2).
+- [ ] Handle model download states and offline fallbacks.
+- [ ] Ensure `Private Cloud Compute` (PCC) compliance for hybrid tasks.
+- [ ] Implement "Siri Glow" UI effects for AI states (Phase 3).
+- [ ] Verify model inference latency across multiple device tiers.
 
 // MARK: - Vision Framework Integration
 final class VisionAIManager {

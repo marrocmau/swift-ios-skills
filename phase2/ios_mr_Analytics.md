@@ -86,21 +86,38 @@ final class AnalyticsService {
         
         track(.errorOccurred, properties: properties)
     }
-    
-    // MARK: - Set User Property
-    func setUserProperty(
-        key: String,
-        value: Any
-    ) {
-        var payload: [String: Any] = [
-            "api_key": apiKey,
-            "distinct_id": getUserID(),
-            "$set": [key: value],
-            "timestamp": ISO8601DateFormatter().string(from: Date())
-        ]
-        
-        sendToAnalytics(payload: payload)
+
+    // MARK: - AI Usage Tracking (Xcode 26 Pattern)
+    func trackAIInference(modelName: String, latency: TimeInterval, success: Bool) {
+        track(.featureUsed, properties: [
+            "ai_model": modelName,
+            "latency_ms": Int(latency * 1000),
+            "success": success
+        ])
     }
+}
+
+// MARK: - Performance Telemetry (MetricKit)
+import MetricKit
+
+final class PerformanceMonitor: NSObject, MXMetricManagerSubscriber {
+    static let shared = PerformanceMonitor()
+    
+    func setup() {
+        MXMetricManager.shared.add(self)
+    }
+    
+    func didReceive(_ payloads: [MXMetricPayload]) {
+        // Process battery, CPU, and hang metrics
+        for payload in payloads {
+            // Send aggregated data to your analytics service
+            AnalyticsService.shared.track(.featureUsed, properties: [
+                "battery_drain": payload.cpuMetrics?.cumulativeCPUTime.description ?? "0",
+                "hang_time": payload.applicationExitMetrics?.backgroundExitData.cumulativeAbnormalExitCount.description ?? "0"
+            ])
+        }
+    }
+}
     
     // MARK: - Private Helpers
     private func sendToAnalytics(payload: [String: Any]) {

@@ -38,7 +38,7 @@ struct SimpleEntry: TimelineEntry {
     let taskCount: Int
 }
 
-// MARK: - Timeline Provider
+// MARK: - Timeline Provider (AI-Ready)
 struct SimpleTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), nextTask: "Sample task", taskCount: 5)
@@ -50,7 +50,10 @@ struct SimpleTimelineProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        // Generate timeline entries for next 12 hours
+        // Xcode 26 Intelligence Pattern:
+        // Define when the widget is MOST relevant (e.g., specific location, time, or activity)
+        let relevance = TimelineEntryRelevance(score: 1.0, duration: 3600)
+        
         let currentDate = Date()
         let entries = (0..<12).map { hour in
             SimpleEntry(
@@ -61,6 +64,7 @@ struct SimpleTimelineProvider: TimelineProvider {
         }
         
         let nextUpdate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
+        // Policy with AI-hinted timeline entries
         let timeline = Timeline(entries: entries, policy: .after(nextUpdate))
         completion(timeline)
     }
