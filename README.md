@@ -34,6 +34,7 @@ In the era of **Apple Intelligence**, building an iOS app requires more than jus
 - **ios_mr_HighPerformanceSwift.md:** **Span, InlineArray & Ownership** (NEW).
 - **ios_mr_Testing.md:** Swift Testing @Suite & @Test patterns.
 - **ios_mr_Security.md:** Keychain, Face ID, and Privacy Manifests.
+- **ios_mr_Quality_SwiftUI:**SwiftUI quality standards. Covers modern APIs, accessibility, performance, and Swift 6.2+ code hygiene.
 
 ### 🟡 Phase 2: Automation & Scale (Intelligence-Ready)
 *Monitoring, monetization, and global reach.*
